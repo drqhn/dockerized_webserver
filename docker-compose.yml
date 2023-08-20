@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  webserver:
+    environment:
+      - DOMAINS=${DOMAINS}
+    build: .
+    ports:
+      - "${HTTP_PORT}:80"
+      - "${HTTPS_PORT}:443"
+    volumes:
+      - ${DOCUMENT_ROOT}:/var/www/site/
